@@ -1,0 +1,65 @@
+# ==========================================
+# NovaServe - Git 忽略规则
+# ==========================================
+
+# ---------- 环境变量 & 敏感信息 ----------
+.env
+*.env
+.env.local
+.env.*.local
+
+# ---------- Python 字节码 & 缓存 ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---------- 虚拟环境 ----------
+venv/
+env/
+.venv
+ENV/
+env.bak/
+venv.bak/
+
+# ---------- 分发 / 打包 ----------
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg-info/
+.eggs/
+
+# ---------- IDE & 编辑器 ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ---------- 测试 & 覆盖率 ----------
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# ---------- 日志 ----------
+*.log
+logs/
+
+# ---------- 操作系统 ----------
+Thumbs.db
+desktop.ini
+
+# ---------- 其他 ----------
+*.pid
+*.seed
+*.pid.lock
