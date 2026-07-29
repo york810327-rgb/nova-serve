@@ -143,6 +143,3 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">
-  <sub>Built with ❤️ using Python & FastAPI</sub>
-</p>
