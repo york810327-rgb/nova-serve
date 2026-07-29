@@ -44,7 +44,7 @@ def create_app() -> FastAPI:
 
     # ---------- 注册全局 HTTP 异常处理 ----------
     @app.exception_handler(Exception)
-    async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    async def global_exception_handler(_request: Request, exc: Exception) -> JSONResponse:
         """捕获所有未处理的异常，统一返回 500 错误响应。"""
         return JSONResponse(
             status_code=500,

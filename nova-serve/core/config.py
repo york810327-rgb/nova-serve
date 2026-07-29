@@ -5,7 +5,6 @@ NovaServe - 应用配置模块
 支持从 .env 文件自动加载配置项。
 """
 
-from typing import List, Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -28,13 +27,13 @@ class Settings(BaseSettings):
     API_PREFIX: str = "/api/v1"  # 全局 API 路由前缀
 
     # ---------- CORS 跨域配置 ----------
-    CORS_ORIGINS: List[str] = [
+    CORS_ORIGINS: list[str] = [
         "http://localhost:3000",   # 默认允许前端开发服务器
         "http://localhost:8080",   # 默认允许其他本地前端
     ]
     CORS_ALLOW_CREDENTIALS: bool = True        # 允许携带凭据（Cookie）
-    CORS_ALLOW_METHODS: List[str] = ["*"]      # 允许所有 HTTP 方法
-    CORS_ALLOW_HEADERS: List[str] = ["*"]      # 允许所有请求头
+    CORS_ALLOW_METHODS: list[str] = ["*"]      # 允许所有 HTTP 方法
+    CORS_ALLOW_HEADERS: list[str] = ["*"]      # 允许所有请求头
 
     # ---------- 日志配置 ----------
     LOG_LEVEL: str = "INFO"  # 日志级别：DEBUG / INFO / WARNING / ERROR

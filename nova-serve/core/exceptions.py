@@ -7,7 +7,7 @@ NovaServe - 全局异常处理模块
 
 from fastapi import Request
 from fastapi.responses import JSONResponse
-from typing import Optional, Any
+from typing import Any
 
 
 class NovaServeException(Exception):
@@ -28,12 +28,12 @@ class NovaServeException(Exception):
         status_code: int = 400,
         code: int = 1000,
         message: str = "业务处理异常",
-        detail: Optional[Any] = None,
+        detail: Any | None = None,
     ) -> None:
         self.status_code: int = status_code
         self.code: int = code
         self.message: str = message
-        self.detail: Optional[Any] = detail
+        self.detail: Any | None = detail
         super().__init__(message)
 
 
@@ -68,7 +68,7 @@ class ForbiddenException(NovaServeException):
 # ---------- 全局异常处理器 ----------
 
 async def nova_serve_exception_handler(
-    request: Request, exc: NovaServeException
+    _request: Request, exc: NovaServeException
 ) -> JSONResponse:
     """
     统一处理所有 NovaServeException 及其子类异常。

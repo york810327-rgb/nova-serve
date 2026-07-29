@@ -5,7 +5,7 @@ NovaServe - 通用数据模型模块
 确保所有接口返回格式统一。
 """
 
-from typing import Any, Generic, Optional, TypeVar
+from typing import Generic, TypeVar
 from pydantic import BaseModel, Field
 
 # ---------- 泛型类型变量 ----------
@@ -33,7 +33,7 @@ class ApiResponse(BaseModel, Generic[T]):
 
     code: int = Field(default=0, description="业务状态码，0 表示成功")
     message: str = Field(default="操作成功", description="响应提示信息")
-    data: Optional[T] = Field(default=None, description="响应数据载荷")
+    data: T | None = Field(default=None, description="响应数据载荷")
 
 
 class PaginatedResponse(ApiResponse[T]):

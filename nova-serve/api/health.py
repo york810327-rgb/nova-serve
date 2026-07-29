@@ -6,7 +6,7 @@ NovaServe - 健康检查路由模块
 
 from fastapi import APIRouter
 from datetime import datetime, timezone
-from typing import Dict, Any
+from typing import Any
 
 router: APIRouter = APIRouter(tags=["系统健康检查"])
 
@@ -16,7 +16,7 @@ router: APIRouter = APIRouter(tags=["系统健康检查"])
     summary="服务健康检查",
     description="返回服务的当前运行状态、版本信息及服务器时间，用于负载均衡或监控系统的健康探测。",
 )
-async def health_check() -> Dict[str, Any]:
+async def health_check() -> dict[str, Any]:
     """
     健康检查接口。
 
